@@ -270,7 +270,7 @@ export default function ProfilePage() {
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="Texas Hold'em">Texas Hold'em</SelectItem>
+                            <SelectItem value="Texas Hold'em">Texas Hold&apos;em</SelectItem>
                             <SelectItem value="Omaha">Omaha</SelectItem>
                             <SelectItem value="Seven Card Stud">Seven Card Stud</SelectItem>
                             <SelectItem value="Five Card Draw">Five Card Draw</SelectItem>
