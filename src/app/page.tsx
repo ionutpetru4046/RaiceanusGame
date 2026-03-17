@@ -81,7 +81,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 min-h-screen flex items-center">
+      <section className="relative overflow-hidden bg-linear-to-br from-background via-background to-primary/5 min-h-screen flex items-center">
         {/* Background Image Carousel */}
         <div
           key={currentImageIndex}
@@ -124,7 +124,7 @@ export default function Home() {
           </div>
         </div>
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/75" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/75 via-black/60 to-black/75" />
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
@@ -144,7 +144,7 @@ export default function Home() {
               className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 drop-shadow-2xl"
             >
               Master the Game at{" "}
-              <span className="text-primary drop-shadow-2xl text-yellow-400">Raiceanu&apos;s Game</span>
+              <span className="text-primary drop-shadow-2xl">Raiceanu&apos;s Game</span>
             </motion.h1>
 
             <motion.p
