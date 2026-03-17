@@ -45,7 +45,7 @@ export function Footer() {
               viewport={{ once: true }}
             >
               <Link href="/" className="flex items-center space-x-2 mb-4">
-                <span className="text-7xl leading-none text-primary" aria-label="Raiceanu's Game">
+                <span className="text-6xl sm:text-7xl leading-none text-primary" aria-label="Raiceanu's Game">
                   🃏
                 </span>
               </Link>

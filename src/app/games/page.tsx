@@ -130,7 +130,7 @@ export default function GamesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 py-24 lg:py-32">
+      <section className="relative overflow-hidden bg-linear-to-br from-background via-background to-primary/5 py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="initial"
@@ -167,9 +167,9 @@ export default function GamesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="variants" className="w-full">
             <TabsList className="grid w-full grid-cols-3 mb-12">
-              <TabsTrigger value="variants" className="text-lg">Game Variants</TabsTrigger>
-              <TabsTrigger value="rules" className="text-lg">Hand Rankings</TabsTrigger>
-              <TabsTrigger value="strategy" className="text-lg">Basic Strategy</TabsTrigger>
+              <TabsTrigger value="variants" className="text-sm sm:text-lg px-2 sm:px-4">Game Variants</TabsTrigger>
+              <TabsTrigger value="rules" className="text-sm sm:text-lg px-2 sm:px-4">Hand Rankings</TabsTrigger>
+              <TabsTrigger value="strategy" className="text-sm sm:text-lg px-2 sm:px-4">Basic Strategy</TabsTrigger>
             </TabsList>
 
             <TabsContent value="variants">
@@ -299,10 +299,10 @@ export default function GamesPage() {
                     <motion.div key={hand.name} variants={fadeInUp}>
                       <Card>
                         <CardContent className="p-6">
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-6">
+                          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                            <div className="flex flex-col gap-2 md:flex-row md:items-center md:gap-6 min-w-0">
                               <div className="flex items-center gap-3">
-                                <Badge variant="outline" className="text-lg px-3 py-1 min-w-[3rem]">
+                                <Badge variant="outline" className="text-base sm:text-lg px-3 py-1 min-w-12 shrink-0">
                                   #{index + 1}
                                 </Badge>
                                 <h3 className="text-xl font-semibold">{hand.name}</h3>
@@ -311,8 +311,10 @@ export default function GamesPage() {
                                 {hand.description}
                               </p>
                             </div>
-                            <div className="text-2xl font-mono bg-muted px-4 py-2 rounded">
+                            <div className="max-w-full overflow-x-auto">
+                              <div className="w-max text-base sm:text-xl md:text-2xl font-mono bg-muted px-4 py-2 rounded">
                               {hand.example}
+                              </div>
                             </div>
                           </div>
                           <p className="text-muted-foreground mt-2 md:hidden">

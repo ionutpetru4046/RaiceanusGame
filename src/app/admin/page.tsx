@@ -59,8 +59,8 @@ export default function AdminDashboard() {
       {/* Header */}
       <div className="bg-background border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
               <Button variant="ghost" size="sm" asChild>
                 <a href="/" className="flex items-center space-x-2">
                   <ArrowLeft className="h-4 w-4" />
@@ -72,7 +72,7 @@ export default function AdminDashboard() {
                 <p className="text-muted-foreground mt-1">Manage your poker website content</p>
               </div>
             </div>
-            <Badge variant="secondary" className="px-3 py-1">
+            <Badge variant="secondary" className="px-3 py-1 w-fit">
               👑 Admin Panel
             </Badge>
           </div>
@@ -81,12 +81,12 @@ export default function AdminDashboard() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
-          <TabsList className="grid w-full grid-cols-5">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="posts">Posts</TabsTrigger>
-            <TabsTrigger value="videos">Videos</TabsTrigger>
-            <TabsTrigger value="tournaments">Tournaments</TabsTrigger>
-            <TabsTrigger value="users">Users</TabsTrigger>
+          <TabsList className="flex w-full justify-start gap-2 overflow-x-auto">
+            <TabsTrigger value="overview" className="shrink-0">Overview</TabsTrigger>
+            <TabsTrigger value="posts" className="shrink-0">Posts</TabsTrigger>
+            <TabsTrigger value="videos" className="shrink-0">Videos</TabsTrigger>
+            <TabsTrigger value="tournaments" className="shrink-0">Tournaments</TabsTrigger>
+            <TabsTrigger value="users" className="shrink-0">Users</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-8">
@@ -179,7 +179,7 @@ export default function AdminDashboard() {
           </TabsContent>
 
           <TabsContent value="posts" className="space-y-6">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 className="text-2xl font-bold">Blog Posts</h2>
                 <p className="text-muted-foreground">Manage your blog content</p>
@@ -257,7 +257,7 @@ export default function AdminDashboard() {
                         <TableCell>{post.views.toLocaleString()}</TableCell>
                         <TableCell>{post.date}</TableCell>
                         <TableCell className="text-right">
-                          <div className="flex items-center justify-end space-x-2">
+                          <div className="flex items-center justify-end gap-2 flex-wrap">
                             <Button variant="ghost" size="sm">
                               <Eye className="h-4 w-4" />
                             </Button>
@@ -294,7 +294,7 @@ export default function AdminDashboard() {
           </TabsContent>
 
           <TabsContent value="videos" className="space-y-6">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 className="text-2xl font-bold">Video Content</h2>
                 <p className="text-muted-foreground">Manage your video library</p>
@@ -329,7 +329,7 @@ export default function AdminDashboard() {
                         <TableCell>{video.views.toLocaleString()}</TableCell>
                         <TableCell>{video.date}</TableCell>
                         <TableCell className="text-right">
-                          <div className="flex items-center justify-end space-x-2">
+                          <div className="flex items-center justify-end gap-2 flex-wrap">
                             <Button variant="ghost" size="sm">
                               <Eye className="h-4 w-4" />
                             </Button>
@@ -366,7 +366,7 @@ export default function AdminDashboard() {
           </TabsContent>
 
           <TabsContent value="tournaments" className="space-y-6">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 className="text-2xl font-bold">Tournaments</h2>
                 <p className="text-muted-foreground">Manage tournament schedules and settings</p>
@@ -391,7 +391,7 @@ export default function AdminDashboard() {
           </TabsContent>
 
           <TabsContent value="users" className="space-y-6">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 className="text-2xl font-bold">User Management</h2>
                 <p className="text-muted-foreground">Manage user accounts and permissions</p>

@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Search, Calendar, User, Tag, ArrowRight } from "lucide-react";
+import { Search, Calendar, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const fadeInUp = {
@@ -277,8 +277,8 @@ export default function BlogPage() {
           >
             <div className="flex flex-col lg:flex-row gap-4 items-center justify-between mb-8">
               <h2 className="text-3xl font-bold">All Articles</h2>
-              <div className="flex gap-4 w-full lg:w-auto">
-                <div className="relative flex-1 lg:w-80">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 w-full lg:w-auto">
+                <div className="relative w-full sm:flex-1 sm:min-w-56 lg:w-80">
                   <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input
                     placeholder="Search articles..."
@@ -288,7 +288,7 @@ export default function BlogPage() {
                   />
                 </div>
                 <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger className="w-40">
+                  <SelectTrigger className="w-full sm:w-40">
                     <SelectValue placeholder="Category" />
                   </SelectTrigger>
                   <SelectContent>
@@ -298,7 +298,7 @@ export default function BlogPage() {
                   </SelectContent>
                 </Select>
                 <Select value={sortBy} onValueChange={setSortBy}>
-                  <SelectTrigger className="w-32">
+                  <SelectTrigger className="w-full sm:w-32">
                     <SelectValue placeholder="Sort" />
                   </SelectTrigger>
                   <SelectContent>

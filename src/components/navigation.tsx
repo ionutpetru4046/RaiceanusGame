@@ -55,13 +55,13 @@ export function Navigation() {
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
+        <div className="flex justify-between h-16 sm:h-20">
           <div className="flex items-center">
             <Link href="/" className="flex items-center" aria-label="Home">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-6xl leading-none text-primary"
+                className="text-5xl sm:text-6xl leading-none text-primary"
               >
                 🃏
               </motion.div>
@@ -69,7 +69,7 @@ export function Navigation() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -93,7 +93,7 @@ export function Navigation() {
           </div>
 
           {/* Auth Section */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <ModeToggle />
             {user ? (
               <DropdownMenu>
@@ -139,7 +139,7 @@ export function Navigation() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="lg:hidden flex items-center space-x-2">
             <ModeToggle />
             <Button
               variant="ghost"
@@ -164,7 +164,7 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t bg-background"
+            className="lg:hidden border-t bg-background"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (

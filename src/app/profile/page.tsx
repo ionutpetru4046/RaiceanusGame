@@ -13,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
-import { User, Trophy, Calendar, Settings, CreditCard, Bell, Shield, Edit, Save, X } from "lucide-react";
+import { User, Trophy, Calendar, CreditCard, Bell, Shield, Edit, Save, X } from "lucide-react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -80,53 +80,59 @@ export default function ProfilePage() {
       {/* Header */}
       <div className="bg-background border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center space-x-4">
-            <Avatar className="h-20 w-20">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-4 min-w-0">
+            <Avatar className="h-16 w-16 sm:h-20 sm:w-20 shrink-0">
               <AvatarImage src={userProfile.avatar} />
               <AvatarFallback className="text-2xl">
                 {userProfile.name.split(' ').map(n => n[0]).join('')}
               </AvatarFallback>
             </Avatar>
-            <div className="flex-1">
-              <h1 className="text-3xl font-bold">{userProfile.name}</h1>
-              <p className="text-muted-foreground">{userProfile.email}</p>
-              <div className="flex items-center space-x-4 mt-2">
+            <div className="min-w-0">
+              <h1 className="text-2xl sm:text-3xl font-bold leading-tight wrap-break-word">{userProfile.name}</h1>
+              <p className="text-muted-foreground break-all">{userProfile.email}</p>
+              <div className="flex flex-wrap gap-2 mt-2">
                 <Badge variant="secondary">Member since {new Date(userProfile.joinDate).getFullYear()}</Badge>
                 <Badge variant="outline">{userProfile.skillLevel} Player</Badge>
               </div>
             </div>
-            <Button
-              variant={isEditing ? "default" : "outline"}
-              onClick={() => isEditing ? handleSaveProfile() : setIsEditing(true)}
-            >
-              {isEditing ? (
-                <>
-                  <Save className="h-4 w-4 mr-2" />
-                  Save Changes
-                </>
-              ) : (
-                <>
-                  <Edit className="h-4 w-4 mr-2" />
-                  Edit Profile
-                </>
-              )}
-            </Button>
-            {isEditing && (
-              <Button variant="ghost" onClick={handleCancelEdit}>
-                <X className="h-4 w-4" />
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              <Button
+                className="w-full sm:w-auto"
+                variant={isEditing ? "default" : "outline"}
+                onClick={() => isEditing ? handleSaveProfile() : setIsEditing(true)}
+              >
+                {isEditing ? (
+                  <>
+                    <Save className="h-4 w-4 mr-2" />
+                    Save Changes
+                  </>
+                ) : (
+                  <>
+                    <Edit className="h-4 w-4 mr-2" />
+                    Edit Profile
+                  </>
+                )}
               </Button>
-            )}
+              {isEditing && (
+                <Button className="w-full sm:w-auto" variant="ghost" onClick={handleCancelEdit}>
+                  <X className="h-4 w-4" />
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="tournaments">Tournaments</TabsTrigger>
-            <TabsTrigger value="achievements">Achievements</TabsTrigger>
-            <TabsTrigger value="settings">Settings</TabsTrigger>
+          <TabsList className="flex w-full justify-start gap-2 overflow-x-auto">
+            <TabsTrigger value="overview" className="shrink-0">Overview</TabsTrigger>
+            <TabsTrigger value="tournaments" className="shrink-0">Tournaments</TabsTrigger>
+            <TabsTrigger value="achievements" className="shrink-0">Achievements</TabsTrigger>
+            <TabsTrigger value="settings" className="shrink-0">Settings</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-8">

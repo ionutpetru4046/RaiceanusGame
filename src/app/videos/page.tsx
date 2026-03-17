@@ -166,7 +166,7 @@ export default function VideosPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 py-24 lg:py-32">
+      <section className="relative overflow-hidden bg-linear-to-br from-background via-background to-primary/5 py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="initial"
@@ -274,8 +274,8 @@ export default function VideosPage() {
           >
             <div className="flex flex-col lg:flex-row gap-4 items-center justify-between mb-8">
               <h2 className="text-3xl font-bold">Video Library</h2>
-              <div className="flex gap-4 w-full lg:w-auto">
-                <div className="relative flex-1 lg:w-80">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 w-full lg:w-auto">
+                <div className="relative w-full sm:flex-1 sm:min-w-56 lg:w-80">
                   <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input
                     placeholder="Search videos..."
@@ -285,7 +285,7 @@ export default function VideosPage() {
                   />
                 </div>
                 <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger className="w-40">
+                  <SelectTrigger className="w-full sm:w-40">
                     <SelectValue placeholder="Category" />
                   </SelectTrigger>
                   <SelectContent>
@@ -295,7 +295,7 @@ export default function VideosPage() {
                   </SelectContent>
                 </Select>
                 <Select value={sortBy} onValueChange={setSortBy}>
-                  <SelectTrigger className="w-32">
+                  <SelectTrigger className="w-full sm:w-32">
                     <SelectValue placeholder="Sort" />
                   </SelectTrigger>
                   <SelectContent>
