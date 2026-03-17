@@ -45,7 +45,9 @@ export function Footer() {
               viewport={{ once: true }}
             >
               <Link href="/" className="flex items-center space-x-2 mb-4">
-                <span className="text-2xl font-bold text-primary">🃏 Raiceanu&apos;s Game</span>
+                <span className="text-7xl leading-none text-primary" aria-label="Raiceanu's Game">
+                  🃏
+                </span>
               </Link>
               <p className="text-muted-foreground mb-4 max-w-md">
                 The ultimate destination for poker enthusiasts. Join tournaments,
