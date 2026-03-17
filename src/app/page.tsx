@@ -100,8 +100,8 @@ export default function Home() {
                 key={index}
                 className={`h-1 rounded-full transition-all duration-300 ${
                   index === currentImageIndex
-                    ? 'w-8 bg-white shadow-lg'
-                    : 'w-4 bg-white/50'
+                    ? "w-8 bg-primary-foreground dark:bg-primary shadow-lg"
+                    : "w-4 bg-primary-foreground/50 dark:bg-primary/50"
                 }`}
               />
             ))}
@@ -115,8 +115,8 @@ export default function Home() {
                 onClick={() => setCurrentImageIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentImageIndex
-                    ? 'bg-white shadow-lg scale-125'
-                    : 'bg-white/50 hover:bg-white/75'
+                    ? "bg-primary-foreground dark:bg-primary shadow-lg scale-125"
+                    : "bg-primary-foreground/50 hover:bg-primary-foreground/75 dark:bg-primary/50 dark:hover:bg-primary/75"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -289,7 +289,7 @@ export default function Home() {
           aria-hidden="true"
         />
         {/* Overlay for better readability */}
-        <div className="absolute inset-0 bg-black/70 z-10" />
+        <div className="absolute inset-0 bg-foreground/70 z-10" />
         <div className="relative z-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div

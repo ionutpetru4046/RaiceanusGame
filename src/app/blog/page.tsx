@@ -145,7 +145,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-24 lg:py-32 bg-black">
+      <section className="relative overflow-hidden py-24 lg:py-32 bg-background">
         {/* Background Video */}
         <div className="absolute inset-0 z-0 pointer-events-none" style={{ width: "100%", height: "100%" }}>
           <div className="rs-fullvideo-cover" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 1, background: "rgba(0,0,0,0.35)" }} />
@@ -182,21 +182,24 @@ export default function BlogPage() {
             className="text-center"
           >
             <motion.div variants={fadeInUp} className="mb-8">
-              <Badge variant="secondary" className="mb-4">
+              <Badge
+                variant="secondary"
+                className="mb-4 bg-white/20 text-white border-white/30 backdrop-blur-sm"
+              >
                 📝 Poker Blog
               </Badge>
             </motion.div>
 
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl md:text-6xl font-bold tracking-tight mb-6"
+              className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-white"
             >
               Poker <span className="text-primary">Insights</span> & Strategies
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
-              className="text-xl text-muted-foreground max-w-3xl mx-auto"
+              className="text-xl text-white/80 max-w-3xl mx-auto"
             >
               Expert analysis, strategy guides, and poker education from professional players
               and coaches. Level up your game with our comprehensive blog.
